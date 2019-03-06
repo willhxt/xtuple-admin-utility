@@ -195,7 +195,7 @@ install_webclient() {
     if [ -z "$BUILD_XT_TAG" ] ; then
       BUILD_XT_TAG=$(cd ${ERPTARDIR}/xtuple && git describe --abbrev=0 --tags)
     fi
-    log_exec cp -R ${ERPTARDIR} /opt/xtuple/$BUILD_XT_TAG/$ERP_DATABASE_NAME
+    log_exec cp -R ${ERPTARDIR}/. /opt/xtuple/$BUILD_XT_TAG/$ERP_DATABASE_NAME
   else
     log "Cloning xTuple Web Client Source Code to /opt/xtuple/$BUILD_XT_TAG/$ERP_DATABASE_NAME/xtuple"
     log "Using version $BUILD_XT_TAG with the given name $MWCNAME"

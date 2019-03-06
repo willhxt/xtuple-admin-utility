@@ -431,7 +431,9 @@ repo_setup() {
 
   case "$REPO" in
     xtuple)
-      export BUILD_XT_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+      if [ -z $BUILD_XT_TAG ]; then
+        export BUILD_XT_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+      fi
       ;;
     payment-gateways)
       git clean -d -f -x
